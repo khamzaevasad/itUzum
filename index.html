@@ -11,9 +11,33 @@
     <header class="bg-base-200">
       <div class="align-elements navbar">
         <div class="navbar-start">
-          <a class="btn btn-secondary" href="#">itUzum</a>
+          <a class="btn btn-secondary hidden md:flex" href="#">itUzum</a>
+          <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+          <button
+            class="btn btn-sm btn-secondary md:hidden"
+            popovertarget="popover-1"
+            style="anchor-name: --anchor-1"
+          >
+            itUzum
+          </button>
+          <ul
+            class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm md:hidden"
+            popover
+            id="popover-1"
+            style="position-anchor: --anchor-1"
+          >
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="navbar-center">
+        <div class="navbar-center hidden md:flex">
           <ul class="menu menu-horizontal">
             <li>
               <a href="#">Home</a>
@@ -38,7 +62,7 @@
 
             <!-- sun icon -->
             <svg
-              class="swap-off h-7 w-7 fill-current"
+              class="swap-off h-5 w-5 md:h-7 md:w-7 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -49,7 +73,7 @@
 
             <!-- moon icon -->
             <svg
-              class="swap-on h-7 w-7 fill-current"
+              class="swap-on h-5 w-5 md:h-7 md:w-7 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
