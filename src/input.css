@@ -16,6 +16,6 @@ main {
 
 @layer components {
   .align-elements {
-    @apply max-w-6xl mx-auto px-5;
+    @apply max-w-[1300px] mx-auto px-5;
   }
 }
