@@ -18,50 +18,39 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="bg-base-200 mb-10">
+      <div class="bg-base-200 mb-5">
         <div class="align-elements navbar px-5">
           <div class="navbar-start">
-            <a class="btn btn-secondary hidden md:flex" href="#">itUzum</a>
-            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
-            <button
-              class="btn btn-sm btn-secondary md:hidden"
-              popovertarget="popover-1"
-              style="anchor-name: --anchor-1"
-            >
-              itUzum
-            </button>
-            <ul
-              class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm md:hidden"
-              popover
-              id="popover-1"
-              style="position-anchor: --anchor-1"
-            >
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
+            <div class="flex gap-3 items-center justify-center">
+              <select class="select w-auto focus:outline-none border-none">
+                <option disabled selected>Tashkent</option>
+                <option>Tashkent</option>
+                <option>Farg'ona</option>
+                <option>Qo'qon</option>
+                <option>Marg'ilon</option>
+              </select>
+              <p class="hidden sm:flex line-clamp-1 text-sm font-medium">
+                Topshirish punktlari
+              </p>
+            </div>
           </div>
-          <div class="navbar-center hidden md:flex">
-            <ul class="menu menu-horizontal">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
+
           <div class="navbar-end">
-            <label class="swap swap-rotate">
+            <div class="flex justify-center items-center gap-4">
+              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
+                >Sotuvchi bo'lish</a
+              >
+              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
+                >Topshirish punktini ochish</a
+              >
+              <a class="text-sm font-semibold hover:opacity-70" href="#"
+                >Savol-Javob</a
+              >
+              <a class="text-sm font-semibold hover:opacity-70" href="#"
+                >Buyurtmalarim</a
+              >
+            </div>
+            <label class="swap swap-rotate px-4">
               <!-- this hidden checkbox controls the state -->
               <input
                 id="theme-toggler"
@@ -95,6 +84,40 @@
           </div>
         </div>
       </div>
+      <nav class="align-elements mb-10">
+        <div class="navbar-start">
+          <a href="#">
+            <img class="w-42" src="./assets/header-logo.png" alt="uzum-logo" />
+          </a>
+        </div>
+        <div class="navbar-center">
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              class="max-w-"
+              type="search"
+              required
+              placeholder="Mahsulot va turkumlar izlash"
+            />
+          </label>
+        </div>
+        <div class="navbar-end"></div>
+      </nav>
     </header>
 
     <!-- Main -->
@@ -292,6 +315,63 @@
         </aside>
       </div>
     </footer>
+
+    <!-- Mobile Menu -->
+    <nav
+      class="align-elements fixed bottom-0 left-0 right-0 z-50 block lg:hidden md:hidden"
+    >
+      <ul class="menu menu-horizontal bg-base-200 rounded-box mt-6">
+        <li>
+          <a
+            class="tooltip flex flex-col items-center justify-center"
+            data-tip="Bosh sahifa"
+          >
+            <span><i class="fa-solid fa-house fa-lg"></i></span>
+            <span>Bosh sahifa</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="tooltip flex flex-col items-center justify-center"
+            data-tip="Katalog"
+          >
+            <span> <i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+            <span>Katalog</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="tooltip flex flex-col items-center justify-center"
+            data-tip="Savat"
+          >
+            <span><i class="fa-solid fa-cart-shopping fa-lg"></i></span>
+            <span>Savat</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="tooltip flex flex-col items-center justify-center"
+            data-tip="Tezkor"
+          >
+            <span>
+              <i class="fa-solid fa-truck-fast fa-lg"></i>
+            </span>
+            <span>Tezkor</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="tooltip flex flex-col items-center justify-center"
+            data-tip="Kabinet"
+          >
+            <span>
+              <i class="fa-solid fa-user fa-lg"></i>
+            </span>
+            <span>Kabinet</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- Script -->
     <script type="module" src="./js/app.js"></script>
