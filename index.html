@@ -18,7 +18,7 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="bg-base-200 mb-5">
+      <div class="bg-base-200 mb-2">
         <div class="align-elements navbar px-5">
           <div class="navbar-start">
             <div class="flex gap-3 items-center justify-center">
@@ -36,7 +36,7 @@
           </div>
 
           <div class="navbar-end">
-            <div class="flex justify-center items-center gap-4">
+            <div class="hidden lg:flex justify-center items-center gap-4">
               <a class="text-sm text-info font-medium hover:opacity-70" href="#"
                 >Sotuvchi bo'lish</a
               >
@@ -50,6 +50,9 @@
                 >Buyurtmalarim</a
               >
             </div>
+            <a class="block lg:hidden text-sm truncate" href=""
+              >Zamonaviy Bozor</a
+            >
             <label class="swap swap-rotate px-4">
               <!-- this hidden checkbox controls the state -->
               <input
@@ -84,7 +87,9 @@
           </div>
         </div>
       </div>
-      <nav class="align-elements mb-10">
+
+      <!-- Nav PC -->
+      <nav class="hidden lg:flex navbar align-elements mb-10 px-5">
         <div class="navbar-start">
           <a href="#">
             <img class="w-42" src="./assets/header-logo.png" alt="uzum-logo" />
@@ -92,32 +97,76 @@
         </div>
         <div class="navbar-center">
           <label class="input">
-            <svg
-              class="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-width="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
             <input
-              class="max-w-"
+              class="sm:w-full md:w-[400px] max-w-full"
               type="search"
               required
               placeholder="Mahsulot va turkumlar izlash"
             />
+
+            <div>
+              <svg
+                class="h-[1em] opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+            </div>
           </label>
         </div>
-        <div class="navbar-end"></div>
+        <div class="navbar-end">
+          <ul class="menu menu-horizontal">
+            <li>
+              <a href="#"><i class="fa-solid fa-user fa-lg"></i> Kirish</a>
+            </li>
+            <li>
+              <a href="#"> <i class="fa-solid fa-heart"></i>Saralangan</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i> Savat</a>
+            </li>
+          </ul>
+        </div>
       </nav>
+
+      <!-- Search Mobile -->
+      <div
+        class="align-elements flex lg:hidden items-center justify-center mb-3"
+      >
+        <label class="input w-[400px] max-w-full">
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input
+            type="search"
+            required
+            placeholder="Mahsulotlar va turkumlar izlash"
+          />
+        </label>
+      </div>
     </header>
 
     <!-- Main -->
@@ -254,7 +303,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-base-200">
+    <footer class="bg-base-200 pb-20">
       <div
         class="align-elements footer footer-horizontal footer-center text-base-content rounded py-10"
       >
@@ -318,9 +367,11 @@
 
     <!-- Mobile Menu -->
     <nav
-      class="align-elements fixed bottom-0 left-0 right-0 z-50 block lg:hidden md:hidden"
+      class="fixed bottom-0 left-0 right-0 w-full z-50 block lg:hidden md:hidden"
     >
-      <ul class="menu menu-horizontal bg-base-200 rounded-box mt-6">
+      <ul
+        class="menu menu-horizontal bg-base-200 rounded-t-xl w-full justify-around p-2"
+      >
         <li>
           <a
             class="tooltip flex flex-col items-center justify-center"
