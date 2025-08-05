@@ -1,9 +1,10 @@
 import { updateUI } from "./updataUi.js";
+import { loader } from "./loader.js";
 
 export const url = "https://dummyjson.com/product";
 
 export const getData = async (url) => {
-  // loader true
+  loader(true);
   if (!url.trim()) {
     alert("No URL");
     return;
@@ -19,7 +20,7 @@ export const getData = async (url) => {
   } catch (error) {
     alert(error.message);
   } finally {
-    // Loader (false)
+    loader(false);
   }
 };
 getData(url);
