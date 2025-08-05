@@ -1,6 +1,6 @@
 import { updateUI } from "./updataUi.js";
 import { loader } from "./loader.js";
-
+// import { showError } from "./error.js";
 export const url = "https://dummyjson.com/product";
 
 export const getData = async (url) => {
