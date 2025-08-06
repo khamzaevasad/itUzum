@@ -1,4 +1,3 @@
-import { updateUI } from "./updataUi.js";
 import { loader } from "./loader.js";
 // import { showError } from "./error.js";
 export const url = "https://dummyjson.com/product";
@@ -16,11 +15,10 @@ export const getData = async (url) => {
       throw new Error("Something went wrong");
     }
     const data = await req.json();
-    updateUI(data.products);
+    return data;
   } catch (error) {
     alert(error.message);
   } finally {
     loader(false);
   }
 };
-getData(url);

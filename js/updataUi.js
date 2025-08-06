@@ -12,11 +12,12 @@ export const updateUI = (data) => {
       reviews,
       discountPercentage,
       thumbnail,
-      title,
+      id,
     } = item;
 
     const clone = template.content.cloneNode(true);
 
+    const card = clone.querySelector(".product-card");
     const productPrice = clone.querySelector("#product-price");
     const productImg = clone.querySelector("#product-img");
     const discountPrice = clone.querySelector("#discount-price");
@@ -35,6 +36,14 @@ export const updateUI = (data) => {
     productRating.textContent = `${rating}`;
     productReviews.textContent = `(${reviews[0].comment})`;
 
+    card.href = `/pages/product.html?id=${id}`;
+
     cardCon.appendChild(clone);
   });
+};
+
+// product update
+
+export const updateProduct = (product) => {
+  console.log(product);
 };
