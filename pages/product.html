@@ -91,7 +91,7 @@
       <!-- Nav PC -->
       <nav class="hidden lg:flex navbar align-elements mb-10 px-5">
         <div class="navbar-start">
-          <a href="#">
+          <a href="../index.html">
             <img class="w-42" src="../assets/header-logo.png" alt="uzum-logo" />
           </a>
         </div>
@@ -113,7 +113,236 @@
     </header>
 
     <!-- Main -->
-    <main></main>
+    <main>
+      <!-- product info -->
+      <section class="align-elements">
+        <h2 id="brand-name" class="text-xl font-bold">BrandName</h2>
+        <div class="flex flex-col md:flex-row gap-4 my-3">
+          <!-- info left -->
+          <div class="flex-1 my-2 flex flex-col justify-center items-center">
+            <!-- carousel -->
+            <div id="carousel-container" class="carousel rounded-box w-64 m-2">
+              <div class="carousel-item w-full">
+                <img
+                  src="https://placehold.co/400"
+                  class="w-full"
+                  alt="Tailwind CSS Carousel component"
+                  id="product-img-1"
+                />
+              </div>
+              <div class="carousel-item w-full">
+                <img
+                  src="https://placehold.co/400"
+                  class="w-full"
+                  alt="Tailwind CSS Carousel component"
+                  id="product-img-2"
+                />
+              </div>
+              <div class="carousel-item w-full">
+                <img
+                  src="https://placehold.co/400"
+                  class="w-full"
+                  alt="Tailwind CSS Carousel component"
+                  id="product-img-3"
+                />
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-2">
+              <a class="btn btn-info btn-outline" href="#">Add to Cart</a>
+              <a class="btn btn-info text-base-100" href="#">Buy Now</a>
+            </div>
+          </div>
+          <!-- info-right -->
+          <div class="flex-2 my-2">
+            <div class="flex flex-col">
+              <!-- category -->
+              <div>
+                <span class="text-xs"
+                  ><i class="fa-solid fa-layer-group"></i
+                ></span>
+                <span id="product-category" class="text-xs">beauty</span>
+              </div>
+              <!-- title -->
+              <p id="product-title" class="text-xl font-bold">
+                Essence Mascara Lash Princess
+              </p>
+              <!-- ratting and review -->
+              <div>
+                <span class="text-xs text-yellow-400"
+                  ><i class="fa-solid fa-star"></i
+                ></span>
+                <span id="product-ratting" class="text-xs opacity-60">4.3</span>
+                <span id="product-comment" class="text-xs opacity-60"
+                  >(Very satisfied!)</span
+                >
+              </div>
+
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+              <!-- price and discount -->
+              <div>
+                <span id="product-info-discount" class="text-xs font-bold"
+                  >26%</span
+                >
+                <span
+                  id="product-info-price"
+                  class="text-xs opacity-60 line-through"
+                  >32.000</span
+                >
+                <p
+                  id="discount-info-price"
+                  class="text-xl font-bold text-red-500"
+                >
+                  23.400
+                </p>
+              </div>
+
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+              <!-- Shipping -->
+              <div>
+                <div>
+                  <span class="text-xs"><i class="fa-solid fa-truck"></i></span>
+                  <span class="text-xs font-bold text-info">Free Shipping</span>
+                </div>
+                <p id="shipping-info" class="text-xs">Ships in 2 weeks</p>
+                <p class="text-xs">
+                  Delivery company:
+                  <span class="font-bold"
+                    ><a href="https://www.fedex.com/en-us/shipping/express.html"
+                      >Fedex</a
+                    ></span
+                  >
+                </p>
+              </div>
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+              <!--More info  -->
+              <div>
+                <!-- Min order -->
+                <div>
+                  <span class="text-xs"
+                    ><i class="fa-solid fa-circle-info"></i
+                  ></span>
+                  <span class="text-xs text-info font-bold">
+                    Minimum order:
+                  </span>
+                  <span
+                    id="minimum-order"
+                    class="text-xs text-base-content font-medium"
+                    >10</span
+                  >
+                </div>
+                <!-- Avialibity -->
+                <div>
+                  <span class="text-xs"
+                    ><i class="fa-solid fa-bag-shopping"></i
+                  ></span>
+                  <span class="text-xs font-bold text-info">Availability:</span>
+                  <span
+                    id="availability"
+                    class="text-base-content text-xs font-medium"
+                    >In Stock</span
+                  >
+                </div>
+                <!-- Warranty -->
+                <div>
+                  <span class="text-xs">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <span class="text-info text-xs font-bold">Warranty:</span>
+                  <span
+                    id="warranty"
+                    class="text-base-content text-xs font-medium"
+                    >1 week warranty
+                  </span>
+                </div>
+              </div>
+
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+              <!--Shop Buttons  -->
+              <div class="flex lg:hidden gap-2 justify-center">
+                <a class="btn btn-info btn-outline" href="#">Add to Cart</a>
+                <a class="btn btn-info text-base-100" href="#">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommended Products -->
+      <section class="align-elements">
+        <h2 class="text-xl font-bold my-6">Recommended Products</h2>
+        <!-- Card Container -->
+        <div
+          id="card-con"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 md:gap-4"
+        ></div>
+        <template>
+          <!-- Card -1 -->
+          <a
+            href="#"
+            class="card bg-base-100 w-full shadow-sm group product-card"
+          >
+            <!-- Like icon -->
+            <div
+              class="absolute top-2 right-2 z-10 bg-white rounded-full w-5 h-5 flex items-center justify-center p-3"
+            >
+              <i
+                class="fa-regular fa-heart cursor-pointer text-gray-600 hover:text-purple-800"
+              ></i>
+            </div>
+
+            <figure>
+              <img
+                id="product-img"
+                src="./assets/image.png"
+                alt="Shoes"
+                class="group-hover:scale-102 transition duration-400 rounded"
+              />
+            </figure>
+
+            <div class="card-body p-1">
+              <div>
+                <span
+                  id="product-price"
+                  class="text-sm line-through text-red-500"
+                  >100</span
+                >
+                <span
+                  id="discount-price"
+                  class="font-bold text-sm text-info"
+                ></span>
+              </div>
+              <p class="font-normal text-xs text-base-400">
+                <span
+                  class="bg-yellow-400 rounded px-0.5 py-0.5 inline-block"
+                  id="product-discount"
+                  >10</span
+                >
+              </p>
+              <p id="product-description" class="line-clamp-2 text-xs">
+                Erkaklar kedalari, 1 o'lcham kattasini oling, Xitoy erkak
+                krasofkalari
+              </p>
+              <div class="flex items-center gap-0.5">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span id="product-rating" class="text-xs text-gray-400">
+                  4.7
+                </span>
+                <span
+                  id="product-reviews"
+                  class="text-xs text-gray-400 line-clamp-1"
+                  >(37 sharhlar)</span
+                >
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-sm btn-info text-base-100 w-full">
+                  Savatga
+                </button>
+              </div>
+            </div>
+          </a>
+        </template>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-base-200 pb-20">
@@ -249,5 +478,6 @@
 
     <!-- Script -->
     <script type="module" src="../js/product.js"></script>
+    <script type="module" src="../js/app.js"></script>
   </body>
 </html>
