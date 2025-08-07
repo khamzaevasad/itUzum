@@ -1,12 +1,11 @@
 import { addToBasket } from "./basket.js";
 
-const cardCon = document.getElementById("card-con");
-const template = document.querySelector("template");
+export const updataUI = (products, template, containerElement) => {
+  const fragment = document.createDocumentFragment();
 
-// update UI
-export const updateUI = (data) => {
-  cardCon.innerHTML = "";
-  data.forEach((item) => {
+  containerElement.innerHTML = "";
+
+  products.forEach((item) => {
     const {
       description,
       price,
@@ -46,8 +45,9 @@ export const updateUI = (data) => {
 
     card.href = `/pages/product.html?id=${id}`;
 
-    cardCon.appendChild(clone);
+    fragment.appendChild(clone);
   });
+  containerElement.appendChild(fragment);
 };
 
 // product update

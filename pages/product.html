@@ -23,14 +23,18 @@
           <div class="navbar-start">
             <div class="flex gap-3 items-center justify-center">
               <select class="select w-auto focus:outline-none border-none">
-                <option disabled selected>Tashkent</option>
-                <option>Tashkent</option>
-                <option>Farg'ona</option>
-                <option>Qo'qon</option>
-                <option>Marg'ilon</option>
+                <option disabled selected>New York</option>
+                <option>Los Angeles</option>
+                <option>Chicago</option>
+                <option>London</option>
+                <option>Paris</option>
+                <option>Berlin</option>
+                <option>Tokyo</option>
+                <option>Seoul</option>
+                <option>Dubai</option>
               </select>
               <p class="hidden sm:flex line-clamp-1 text-sm font-medium">
-                Topshirish punktlari
+                Pickup points
               </p>
             </div>
           </div>
@@ -38,20 +42,18 @@
           <div class="navbar-end">
             <div class="hidden lg:flex justify-center items-center gap-4">
               <a class="text-sm text-info font-medium hover:opacity-70" href="#"
-                >Sotuvchi bo'lish</a
-              >
+                >Become a seller
+              </a>
               <a class="text-sm text-info font-medium hover:opacity-70" href="#"
-                >Topshirish punktini ochish</a
-              >
+                >Open a pickup point
+              </a>
+              <a class="text-sm font-semibold hover:opacity-70" href="#">FAQ</a>
               <a class="text-sm font-semibold hover:opacity-70" href="#"
-                >Savol-Javob</a
-              >
-              <a class="text-sm font-semibold hover:opacity-70" href="#"
-                >Buyurtmalarim</a
-              >
+                >My orders
+              </a>
             </div>
             <a class="block lg:hidden text-sm truncate" href=""
-              >Zamonaviy Bozor</a
+              >Modern Market</a
             >
             <label class="swap swap-rotate px-4">
               <!-- this hidden checkbox controls the state -->
@@ -89,54 +91,27 @@
       </div>
 
       <!-- Nav PC -->
+
       <nav class="hidden lg:flex navbar align-elements mb-10 px-5">
         <div class="navbar-start">
-          <a href="./index.html">
+          <a href="../index.html">
             <img class="w-42" src="../assets/header-logo.png" alt="uzum-logo" />
           </a>
         </div>
-        <div class="navbar-center">
-          <label class="input">
-            <input
-              class="sm:w-full md:w-[400px] max-w-full"
-              type="search"
-              required
-              placeholder="Mahsulot va turkumlar izlash"
-            />
 
-            <div>
-              <svg
-                class="h-[1em] opacity-50"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-width="2.5"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </g>
-              </svg>
-            </div>
-          </label>
-        </div>
         <div class="navbar-end">
           <ul class="menu menu-horizontal">
             <li>
-              <a href="#"><i class="fa-solid fa-user fa-lg"></i> Kirish</a>
+              <a href="#"><i class="fa-solid fa-user fa-lg"></i> Sign in </a>
             </li>
             <li>
-              <a href="#"> <i class="fa-solid fa-heart"></i>Saralangan</a>
+              <a href="#"> <i class="fa-solid fa-heart"></i>Wishlist</a>
             </li>
             <li class="indicator">
               <span class="indicator-item badge badge-info" id="total-amound"
                 >0</span
               >
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i> Savat</a>
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
             </li>
           </ul>
         </div>
@@ -314,10 +289,10 @@
           >
             <!-- Like icon -->
             <div
-              class="absolute top-2 right-2 z-10 bg-white rounded-full w-5 h-5 flex items-center justify-center p-3"
+              class="absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
             >
               <i
-                class="fa-regular fa-heart cursor-pointer text-gray-600 hover:text-purple-800"
+                class="fa-regular fa-heart cursor-pointer hover:text-red-500"
               ></i>
             </div>
 
@@ -365,8 +340,10 @@
                 >
               </div>
               <div class="card-actions justify-center">
-                <button class="btn btn-sm btn-info text-base-100 w-full">
-                  Savatga
+                <button
+                  class="btn btn-sm btn-info text-base-100 w-full basket-btn"
+                >
+                  Add to Cart
                 </button>
               </div>
             </div>
@@ -451,7 +428,7 @@
             data-tip="Bosh sahifa"
           >
             <span><i class="fa-solid fa-house fa-lg"></i></span>
-            <a href="../index.html">Bosh Sahifa</a>
+            <a href="../index.html">Home</a>
           </a>
         </li>
         <li>
@@ -460,7 +437,7 @@
             data-tip="Katalog"
           >
             <span> <i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
-            <span>Katalog</span>
+            <span>Catalog</span>
           </a>
         </li>
         <li>
@@ -472,7 +449,7 @@
               >0</span
             >
             <span><i class="fa-solid fa-cart-shopping fa-lg"></i></span>
-            <span>Savat</span>
+            <span>Cart</span>
           </a>
         </li>
         <li>
@@ -483,7 +460,7 @@
             <span>
               <i class="fa-solid fa-truck-fast fa-lg"></i>
             </span>
-            <span>Tezkor</span>
+            <span>Express</span>
           </a>
         </li>
         <li>
@@ -494,7 +471,7 @@
             <span>
               <i class="fa-solid fa-user fa-lg"></i>
             </span>
-            <span>Kabinet</span>
+            <span>Account</span>
           </a>
         </li>
       </ul>

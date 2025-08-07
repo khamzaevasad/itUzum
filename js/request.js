@@ -1,10 +1,4 @@
-const showMoreBtn = document.getElementById("show-more-btn");
-const showLessBtn = document.getElementById("show-less-btn");
-
 import { loader } from "./loader.js";
-
-let limit = 10;
-export const url = `${"https://dummyjson.com/product?limit="} + ${limit}`;
 
 export const getData = async (url) => {
   loader(true);
