@@ -132,7 +132,10 @@
             <li>
               <a href="#"> <i class="fa-solid fa-heart"></i>Saralangan</a>
             </li>
-            <li>
+            <li class="indicator">
+              <span class="indicator-item badge badge-info" id="total-amound"
+                >0</span
+              >
               <a href="#"><i class="fa-solid fa-cart-shopping"></i> Savat</a>
             </li>
           </ul>
@@ -314,13 +317,29 @@
                 >
               </div>
               <div class="card-actions justify-center">
-                <button class="btn btn-sm btn-info text-base-100 w-full">
+                <button
+                  class="btn btn-sm btn-info text-base-100 w-full basket-btn"
+                >
                   Savatga
                 </button>
               </div>
             </div>
           </a>
         </template>
+        <!-- Show more BTN -->
+        <div class="flex justify-center my-10">
+          <button id="show-more-btn" class="btn btn-info text-white">
+            Show More
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <button
+            id="show-less-btn"
+            class="hidden btn btn-outline btn-info hover:text-white"
+          >
+            Show Less
+          </button>
+        </div>
       </section>
     </main>
 
@@ -414,9 +433,12 @@
         </li>
         <li>
           <a
-            class="tooltip flex flex-col items-center justify-center"
+            class="tooltip flex flex-col items-center justify-center indicator"
             data-tip="Savat"
           >
+            <span class="indicator-item badge badge-info" id="footer-amound"
+              >0</span
+            >
             <span><i class="fa-solid fa-cart-shopping fa-lg"></i></span>
             <span>Savat</span>
           </a>

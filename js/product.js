@@ -2,9 +2,6 @@ import { getData } from "./request.js";
 import { updateProduct, updateUI } from "./updataUi.js";
 import "./mode.js";
 
-const cardCon = document.getElementById("card-con");
-const template = document.querySelector("template");
-
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 

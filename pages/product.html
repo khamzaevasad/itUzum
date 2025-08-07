@@ -91,11 +91,39 @@
       <!-- Nav PC -->
       <nav class="hidden lg:flex navbar align-elements mb-10 px-5">
         <div class="navbar-start">
-          <a href="../index.html">
+          <a href="./index.html">
             <img class="w-42" src="../assets/header-logo.png" alt="uzum-logo" />
           </a>
         </div>
+        <div class="navbar-center">
+          <label class="input">
+            <input
+              class="sm:w-full md:w-[400px] max-w-full"
+              type="search"
+              required
+              placeholder="Mahsulot va turkumlar izlash"
+            />
 
+            <div>
+              <svg
+                class="h-[1em] opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+            </div>
+          </label>
+        </div>
         <div class="navbar-end">
           <ul class="menu menu-horizontal">
             <li>
@@ -104,7 +132,10 @@
             <li>
               <a href="#"> <i class="fa-solid fa-heart"></i>Saralangan</a>
             </li>
-            <li>
+            <li class="indicator">
+              <span class="indicator-item badge badge-info" id="total-amound"
+                >0</span
+              >
               <a href="#"><i class="fa-solid fa-cart-shopping"></i> Savat</a>
             </li>
           </ul>
@@ -434,9 +465,12 @@
         </li>
         <li>
           <a
-            class="tooltip flex flex-col items-center justify-center"
+            class="tooltip flex flex-col items-center justify-center indicator"
             data-tip="Savat"
           >
+            <span class="indicator-item badge badge-info" id="footer-amound"
+              >0</span
+            >
             <span><i class="fa-solid fa-cart-shopping fa-lg"></i></span>
             <span>Savat</span>
           </a>
@@ -478,6 +512,5 @@
 
     <!-- Script -->
     <script type="module" src="../js/product.js"></script>
-    <script type="module" src="../js/app.js"></script>
   </body>
 </html>

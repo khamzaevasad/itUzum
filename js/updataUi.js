@@ -1,3 +1,5 @@
+import { addToBasket } from "./basket.js";
+
 const cardCon = document.getElementById("card-con");
 const template = document.querySelector("template");
 
@@ -25,6 +27,12 @@ export const updateUI = (data) => {
     const productDescription = clone.querySelector("#product-description");
     const productRating = clone.querySelector("#product-rating");
     const productReviews = clone.querySelector("#product-reviews");
+    const basketBtn = clone.querySelector(".basket-btn");
+
+    basketBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      addToBasket(item);
+    });
 
     productPrice.textContent = `$${price}`;
     productImg.src = `${thumbnail}`;
@@ -55,8 +63,6 @@ const availability = document.getElementById("availability");
 const warranty = document.getElementById("warranty");
 
 export const updateProduct = (product) => {
-  console.log(product);
-
   const imagesContainer = document.getElementById("carousel-container");
 
   imagesContainer.innerHTML = "";
