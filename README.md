@@ -4,7 +4,7 @@ This is a responsive and dynamic **Shopping Store** project built with **Tailwin
 
 ## 🌐 Live Demo
 
-> ( https://it-uzum-alpha.vercel.app/ )
+>  https://it-uzum-alpha.vercel.app/ 
 
 ---
 
