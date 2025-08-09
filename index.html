@@ -255,79 +255,171 @@
       <!-- Products section -->
       <section class="align-elements py-10">
         <h2 class="text-3xl font-bold mb-14">Products:</h2>
-        <!-- Card Container -->
-        <div
-          id="card-con"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 md:gap-4"
-        ></div>
-        <template>
-          <!-- Card -1 -->
-          <a
-            href="#"
-            class="card bg-base-100 w-full shadow-sm group product-card"
-          >
-            <!-- Like icon -->
+        <div class="flex gap-4">
+          <!-- filter -->
+          <div class="flex flex-col">
+            <!-- category -->
             <div
-              class="absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
+              class="collapse collapse-arrow bg-base-100 border border-base-300"
             >
-              <i
-                class="fa-regular fa-heart cursor-pointer hover:text-red-500"
-              ></i>
-            </div>
-
-            <figure>
-              <img
-                id="product-img"
-                src="./assets/image.png"
-                alt="Shoes"
-                class="group-hover:scale-102 transition duration-400 rounded"
-              />
-            </figure>
-
-            <div class="card-body p-1">
-              <div>
-                <span
-                  id="product-price"
-                  class="text-sm line-through text-red-500"
-                  >100</span
-                >
-                <span
-                  id="discount-price"
-                  class="font-bold text-sm text-info"
-                ></span>
-              </div>
-              <p class="font-normal text-xs text-base-400">
-                <span
-                  class="bg-yellow-400 rounded px-0.5 py-0.5 inline-block"
-                  id="product-discount"
-                  >10</span
-                >
-              </p>
-              <p id="product-description" class="line-clamp-2 text-xs">
-                Erkaklar kedalari, 1 o'lcham kattasini oling, Xitoy erkak
-                krasofkalari
-              </p>
-              <div class="flex items-center gap-0.5">
-                <i class="fa-solid fa-star text-amber-400"></i>
-                <span id="product-rating" class="text-xs text-gray-400">
-                  4.7
-                </span>
-                <span
-                  id="product-reviews"
-                  class="text-xs text-gray-400 line-clamp-1"
-                  >(37 sharhlar)</span
-                >
-              </div>
-              <div class="card-actions justify-center">
-                <button
-                  class="btn btn-sm btn-info text-base-100 w-full basket-btn"
-                >
-                  Add to Cart
-                </button>
+              <input type="radio" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-semibold">Categories</div>
+              <div class="collapse-content text-sm">
+                <div id="product-filter" class="overflow-auto h-[600px]">
+                  <fieldset
+                    id="product-element-category"
+                    class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
+                  >
+                    <label class="label font-bold text-base-content">
+                      <input type="checkbox" class="checkbox" />
+                      <span class="product-filter-category"></span>
+                    </label>
+                  </fieldset>
+                </div>
               </div>
             </div>
-          </a>
-        </template>
+            <!-- brand -->
+            <div
+              class="collapse collapse-arrow bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-2" />
+              <div class="collapse-title font-semibold">Brands</div>
+              <div class="collapse-content text-sm">
+                <div id="brand-filter" class="overflow-auto h-[600px]">
+                  <fieldset
+                    id="product-brand"
+                    class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
+                  >
+                    <label class="label font-bold text-base-content">
+                      <input type="checkbox" class="checkbox" />
+                      <span class="brand-filter-category"></span>
+                    </label>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <!-- price -->
+            <div
+              class="collapse collapse-arrow bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-2" />
+              <div class="collapse-title font-semibold">Price</div>
+              <div class="collapse-content text-sm">
+                <fieldset
+                  class="fieldset border-base-300 rounded-box w-xs border p-4"
+                >
+                  <div class="flex flex-col">
+                    <p class="text-xl font-bold text-info mb-5">All Prices</p>
+                    <ul class="flex flex-col gap-2">
+                      <li>
+                        <a href="#" class="text-xs hover:text-info mt-1.5"
+                          >Under $380,000</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="text-xs hover:text-info"
+                          >$380,000 ~ $760,000
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-xs hover:text-info">
+                          $760,000 ~ $1,140,000
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-xs hover:text-info"
+                          >$1,140,000 ~ $1,140,000</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <label class="label">
+                    <input type="number" class="input" />
+                    <input type="number" class="input" />
+                  </label>
+
+                  <button class="btn btn-info btn-outline">Search</button>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Container -->
+          <div
+            id="card-con"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 md:gap-4"
+          ></div>
+          <template>
+            <!-- Card -1 -->
+            <a
+              href="#"
+              class="card bg-base-100 w-full shadow-sm group product-card"
+            >
+              <!-- Like icon -->
+              <div
+                class="absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
+              >
+                <i
+                  class="fa-regular fa-heart cursor-pointer hover:text-red-500"
+                ></i>
+              </div>
+
+              <figure>
+                <img
+                  id="product-img"
+                  src="./assets/image.png"
+                  alt="Shoes"
+                  class="group-hover:scale-102 transition duration-400 rounded"
+                />
+              </figure>
+
+              <div class="card-body p-1">
+                <div>
+                  <span
+                    id="product-price"
+                    class="text-sm line-through text-red-500"
+                    >100</span
+                  >
+                  <span
+                    id="discount-price"
+                    class="font-bold text-sm text-info"
+                  ></span>
+                </div>
+                <p class="font-normal text-xs text-base-400">
+                  <span
+                    class="bg-yellow-400 rounded px-0.5 py-0.5 inline-block"
+                    id="product-discount"
+                    >10</span
+                  >
+                </p>
+                <p id="product-description" class="line-clamp-2 text-xs">
+                  Erkaklar kedalari, 1 o'lcham kattasini oling, Xitoy erkak
+                  krasofkalari
+                </p>
+                <div class="flex items-center gap-0.5">
+                  <i class="fa-solid fa-star text-amber-400"></i>
+                  <span id="product-rating" class="text-xs text-gray-400">
+                    4.7
+                  </span>
+                  <span
+                    id="product-reviews"
+                    class="text-xs text-gray-400 line-clamp-1"
+                    >(37 sharhlar)</span
+                  >
+                </div>
+                <div class="card-actions justify-center">
+                  <button
+                    class="btn btn-sm btn-info text-base-100 w-full basket-btn"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </a>
+          </template>
+        </div>
+
         <!-- Show more BTN -->
         <div class="flex justify-center my-10">
           <button id="show-more-btn" class="btn btn-info text-white">

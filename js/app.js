@@ -1,9 +1,9 @@
 import "./basket.js";
 import "./mode.js";
 import { getData } from "./request.js";
-import { updataUI } from "./updataUi.js";
+import { updataUI, productFilter } from "./updataUi.js";
 
-let limit = 10;
+let limit = 12;
 let url = "https://dummyjson.com/product";
 
 const mainTemplate = document.querySelector("template"); //index.html
@@ -14,6 +14,14 @@ const showLessBtn = document.getElementById("show-less-btn");
 getData(url + `?limit=${limit}`)
   .then((data) => {
     updataUI(data.products, mainTemplate, cardCon);
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
+
+getData("https://dummyjson.com/product?limit=194")
+  .then((data) => {
+    productFilter(data.products);
   })
   .catch((error) => {
     console.log(error.message);

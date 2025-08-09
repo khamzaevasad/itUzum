@@ -50,6 +50,60 @@ export const updataUI = (products, template, containerElement) => {
   containerElement.appendChild(fragment);
 };
 
+// product category
+
+export const productFilter = (product) => {
+  const categories = [...new Set(product.map((item) => item.category))];
+  const brands = [...new Set(product.map((item) => item.brand))];
+
+  const categoryElements = document.querySelectorAll(
+    ".product-filter-category"
+  );
+  const categoryContainer = document.getElementById("product-element-category");
+
+  categories.forEach((category, index) => {
+    if (categoryElements[index]) {
+      categoryElements[index].textContent = category;
+    } else {
+      const label = document.createElement("label");
+      label.classList.add("label", "font-bold", "text-base-content");
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.classList.add("checkbox");
+      const span = document.createElement("span");
+      span.classList.add("product-filter-category");
+      span.textContent = category;
+
+      label.appendChild(checkbox);
+      label.appendChild(span);
+      categoryContainer.appendChild(label);
+    }
+  });
+
+  const brandContainer = document.getElementById("product-brand");
+  const brandElements = document.querySelectorAll(".brand-filter-category");
+  brands.forEach((brand, index) => {
+    if (brandElements[index]) {
+      brandElements[index].textContent = brand;
+    } else {
+      const label = document.createElement("label");
+      label.classList.add("label", "font-bold", "text-base-content");
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.classList.add("checkbox");
+      const span = document.createElement("span");
+      span.classList.add("brand-filter-category");
+      span.textContent = brand;
+
+      label.appendChild(checkbox);
+      label.appendChild(span);
+      brandContainer.appendChild(label);
+    }
+  });
+};
+
 // product update
 const brandName = document.getElementById("brand-name");
 const productCategory = document.getElementById("product-category");
