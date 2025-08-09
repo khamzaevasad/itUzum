@@ -1,5 +1,6 @@
 import "./basket.js";
 import "./mode.js";
+import "./search.js";
 import { getData } from "./request.js";
 import { updataUI, productFilter } from "./updataUi.js";
 

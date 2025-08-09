@@ -14,11 +14,13 @@ export const updataUI = (products, template, containerElement) => {
       discountPercentage,
       thumbnail,
       id,
+      title,
     } = item;
 
     const clone = template.content.cloneNode(true);
 
     const card = clone.querySelector(".product-card");
+    card.dataset.title = title;
     const productPrice = clone.querySelector("#product-price");
     const productImg = clone.querySelector("#product-img");
     const discountPrice = clone.querySelector("#discount-price");

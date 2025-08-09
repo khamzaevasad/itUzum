@@ -257,90 +257,121 @@
         <h2 class="text-3xl font-bold mb-14">Products:</h2>
         <div class="flex gap-4">
           <!-- filter -->
-          <div class="flex flex-col">
-            <!-- category -->
-            <div
-              class="collapse collapse-arrow bg-base-100 border border-base-300"
-            >
-              <input type="radio" name="my-accordion-2" checked="checked" />
-              <div class="collapse-title font-semibold">Categories</div>
-              <div class="collapse-content text-sm">
-                <div id="product-filter" class="overflow-auto h-[600px]">
-                  <fieldset
-                    id="product-element-category"
-                    class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
-                  >
-                    <label class="label font-bold text-base-content">
-                      <input type="checkbox" class="checkbox" />
-                      <span class="product-filter-category"></span>
-                    </label>
-                  </fieldset>
-                </div>
-              </div>
-            </div>
-            <!-- brand -->
-            <div
-              class="collapse collapse-arrow bg-base-100 border border-base-300"
-            >
-              <input type="radio" name="my-accordion-2" />
-              <div class="collapse-title font-semibold">Brands</div>
-              <div class="collapse-content text-sm">
-                <div id="brand-filter" class="overflow-auto h-[600px]">
-                  <fieldset
-                    id="product-brand"
-                    class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
-                  >
-                    <label class="label font-bold text-base-content">
-                      <input type="checkbox" class="checkbox" />
-                      <span class="brand-filter-category"></span>
-                    </label>
-                  </fieldset>
-                </div>
-              </div>
-            </div>
-            <!-- price -->
-            <div
-              class="collapse collapse-arrow bg-base-100 border border-base-300"
-            >
-              <input type="radio" name="my-accordion-2" />
-              <div class="collapse-title font-semibold">Price</div>
-              <div class="collapse-content text-sm">
-                <fieldset
-                  class="fieldset border-base-300 rounded-box w-xs border p-4"
+          <div class="flex flex-col hidden lg:flex">
+            <!-- Search panel -->
+            <div class="flex justify-center mb-5">
+              <label class="input w-[400px]">
+                <svg
+                  class="h-[1em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
                 >
-                  <div class="flex flex-col">
-                    <p class="text-xl font-bold text-info mb-5">All Prices</p>
-                    <ul class="flex flex-col gap-2">
-                      <li>
-                        <a href="#" class="text-xs hover:text-info mt-1.5"
-                          >Under $380,000</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#" class="text-xs hover:text-info"
-                          >$380,000 ~ $760,000
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="text-xs hover:text-info">
-                          $760,000 ~ $1,140,000
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="text-xs hover:text-info"
-                          >$1,140,000 ~ $1,140,000</a
-                        >
-                      </li>
-                    </ul>
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input
+                  id="search-product"
+                  type="search"
+                  required
+                  placeholder="Search product"
+                  autocomplete="off"
+                />
+              </label>
+            </div>
+
+            <!-- category -->
+            <div id="filter-category">
+              <div
+                class="collapse collapse-arrow bg-base-100 border border-base-300"
+              >
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title font-semibold">Categories</div>
+                <div class="collapse-content text-sm">
+                  <div id="product-filter" class="overflow-auto h-[600px]">
+                    <fieldset
+                      id="product-element-category"
+                      class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
+                    >
+                      <label class="label font-bold text-base-content">
+                        <input type="checkbox" class="checkbox" />
+                        <span class="product-filter-category"></span>
+                      </label>
+                    </fieldset>
                   </div>
+                </div>
+              </div>
+              <!-- brand -->
+              <div
+                class="collapse collapse-arrow bg-base-100 border border-base-300"
+              >
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title font-semibold">Brands</div>
+                <div class="collapse-content text-sm">
+                  <div id="brand-filter" class="overflow-auto h-[600px]">
+                    <fieldset
+                      id="product-brand"
+                      class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4"
+                    >
+                      <label class="label font-bold text-base-content">
+                        <input type="checkbox" class="checkbox" />
+                        <span class="brand-filter-category"></span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+              <!-- price -->
+              <div
+                class="collapse collapse-arrow bg-base-100 border border-base-300"
+              >
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title font-semibold">Price</div>
+                <div class="collapse-content text-sm">
+                  <fieldset
+                    class="fieldset border-base-300 rounded-box w-xs border p-4"
+                  >
+                    <div class="flex flex-col">
+                      <p class="text-xl font-bold text-info mb-5">All Prices</p>
+                      <ul class="flex flex-col gap-2">
+                        <li>
+                          <a href="#" class="text-xs hover:text-info mt-1.5"
+                            >Under $380,000</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="text-xs hover:text-info"
+                            >$380,000 ~ $760,000
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-xs hover:text-info">
+                            $760,000 ~ $1,140,000
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-xs hover:text-info"
+                            >$1,140,000 ~ $1,140,000</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
 
-                  <label class="label">
-                    <input type="number" class="input" />
-                    <input type="number" class="input" />
-                  </label>
+                    <label class="label">
+                      <input type="number" class="input" />
+                      <input type="number" class="input" />
+                    </label>
 
-                  <button class="btn btn-info btn-outline">Search</button>
-                </fieldset>
+                    <button class="btn btn-info btn-outline">Search</button>
+                  </fieldset>
+                </div>
               </div>
             </div>
           </div>
@@ -418,6 +449,17 @@
               </div>
             </a>
           </template>
+          <!-- Not Found -->
+          <div
+            id="input-search-container"
+            class="hidden flex items-center justify-center"
+          >
+            <h2 class="text-2xl font-bold text-center">
+              The
+              <span id="search-value" class="text-red-500">Nike</span> you're
+              looking for is not available
+            </h2>
+          </div>
         </div>
 
         <!-- Show more BTN -->
