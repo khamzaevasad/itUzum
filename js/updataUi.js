@@ -1,4 +1,5 @@
 import { addToBasket } from "./basket.js";
+import { addToWishList } from "./wishList.js";
 
 export const updataUI = (products, template, containerElement) => {
   const fragment = document.createDocumentFragment();
@@ -29,6 +30,12 @@ export const updataUI = (products, template, containerElement) => {
     const productRating = clone.querySelector("#product-rating");
     const productReviews = clone.querySelector("#product-reviews");
     const basketBtn = clone.querySelector(".basket-btn");
+    const wishListBtn = clone.querySelector(".wishListBtn");
+
+    wishListBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      addToWishList(item);
+    });
 
     basketBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -133,6 +140,15 @@ export const updateProduct = (product) => {
 
     div.appendChild(img);
     imagesContainer.appendChild(div);
+  });
+  const cartBtn = document.querySelectorAll(".cart-btn");
+
+  // product cart btn events
+  cartBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      addToBasket(product);
+    });
   });
 
   brandName.textContent = product.brand;

@@ -91,7 +91,6 @@
       </div>
 
       <!-- Nav PC -->
-
       <nav class="hidden lg:flex navbar align-elements mb-10 px-5">
         <div class="navbar-start">
           <a href="../index.html">
@@ -104,11 +103,18 @@
             <li>
               <a href="#"><i class="fa-solid fa-user fa-lg"></i> Sign in </a>
             </li>
-            <li>
+            <li class="indicator">
+              <span
+                class="indicator-item badge badge-info badge-sm"
+                id="header-wishlist"
+                >0</span
+              >
               <a href="#"> <i class="fa-solid fa-heart"></i>Wishlist</a>
             </li>
             <li class="indicator">
-              <span class="indicator-item badge badge-info" id="total-amound"
+              <span
+                class="indicator-item badge badge-info badge-sm"
+                id="total-amound"
                 >0</span
               >
               <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
@@ -154,7 +160,9 @@
               </div>
             </div>
             <div class="hidden lg:flex gap-2">
-              <a class="btn btn-info btn-outline" href="#">Add to Cart</a>
+              <button class="btn btn-info btn-outline cart-btn">
+                Add to Cart
+              </button>
               <a class="btn btn-info text-base-100" href="#">Buy Now</a>
             </div>
           </div>
@@ -265,7 +273,9 @@
               <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
               <!--Shop Buttons  -->
               <div class="flex lg:hidden gap-2 justify-center">
-                <a class="btn btn-info btn-outline" href="#">Add to Cart</a>
+                <button class="btn btn-info btn-outline cart-btn">
+                  Add to Cart
+                </button>
                 <a class="btn btn-info text-base-100" href="#">Buy Now</a>
               </div>
             </div>
@@ -289,7 +299,7 @@
           >
             <!-- Like icon -->
             <div
-              class="absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
+              class="wishListBtn absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
             >
               <i
                 class="fa-regular fa-heart cursor-pointer hover:text-red-500"
@@ -425,27 +435,34 @@
         <li>
           <a
             class="tooltip flex flex-col items-center justify-center"
-            data-tip="Bosh sahifa"
+            data-tip="home"
           >
             <span><i class="fa-solid fa-house fa-lg"></i></span>
             <a href="../index.html">Home</a>
           </a>
         </li>
-        <li>
+        <li class="indicator">
           <a
             class="tooltip flex flex-col items-center justify-center"
-            data-tip="Katalog"
+            data-tip="wishlist"
           >
-            <span> <i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
-            <span>Catalog</span>
+            <span
+              class="indicator-item badge badge-info badge-sm"
+              id="footer-wishList"
+              >0</span
+            >
+            <span> <i class="fa-solid fa-heart fa-lg"></i></span>
+            <span>Wishlist</span>
           </a>
         </li>
         <li>
           <a
             class="tooltip flex flex-col items-center justify-center indicator"
-            data-tip="Savat"
+            data-tip="cart"
           >
-            <span class="indicator-item badge badge-info" id="footer-amound"
+            <span
+              class="indicator-item badge badge-info badge-sm"
+              id="footer-amound"
               >0</span
             >
             <span><i class="fa-solid fa-cart-shopping fa-lg"></i></span>
@@ -455,7 +472,7 @@
         <li>
           <a
             class="tooltip flex flex-col items-center justify-center"
-            data-tip="Tezkor"
+            data-tip="express"
           >
             <span>
               <i class="fa-solid fa-truck-fast fa-lg"></i>
@@ -466,7 +483,7 @@
         <li>
           <a
             class="tooltip flex flex-col items-center justify-center"
-            data-tip="Kabinet"
+            data-tip="account"
           >
             <span>
               <i class="fa-solid fa-user fa-lg"></i>

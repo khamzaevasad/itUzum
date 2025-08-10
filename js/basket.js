@@ -1,5 +1,6 @@
 const totalAmoundBox = document.getElementById("total-amound");
 const footerAmound = document.getElementById("footer-amound");
+
 import { formatNumber } from "./formatNumber.js";
 
 let basketProducts = [];
