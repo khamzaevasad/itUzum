@@ -1,7 +1,13 @@
 const headerWishlist = document.getElementById("header-wishlist");
 const footerWashList = document.getElementById("footer-wishList");
-console.log(footerWashList);
-let wishList = [];
+
+let wishList = localStorage.getItem("wishList")
+  ? JSON.parse(localStorage.getItem("wishList"))
+  : [];
+
+if (wishList.length) {
+  calculateWishList(wishList);
+}
 
 function calculateWishList(wishList) {
   let totalAmound = 0;
@@ -21,4 +27,5 @@ export const addToWishList = (product) => {
     wishList.push({ ...product, amound: 1 });
   }
   console.log(calculateWishList(wishList));
+  localStorage.setItem("wishList", JSON.stringify(wishList));
 };

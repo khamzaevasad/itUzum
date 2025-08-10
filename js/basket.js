@@ -1,11 +1,16 @@
+import { formatNumber } from "./formatNumber.js";
 const totalAmoundBox = document.getElementById("total-amound");
 const footerAmound = document.getElementById("footer-amound");
 
-import { formatNumber } from "./formatNumber.js";
+export let basketProducts = localStorage.getItem("basket")
+  ? JSON.parse(localStorage.getItem("basket"))
+  : [];
 
-let basketProducts = [];
+if (basketProducts.length) {
+  calculateTotal(basketProducts);
+}
 
-function calculateTotal(basketProducts) {
+export function calculateTotal(basketProducts) {
   let totalPrice = 0;
   let totalAmount = 0;
 
@@ -28,6 +33,6 @@ export function addToBasket(product) {
   } else {
     basketProducts.push({ ...product, amount: 1 });
   }
-  console.log(calculateTotal(basketProducts));
-  console.log(basketProducts);
+  calculateTotal(basketProducts);
+  localStorage.setItem("basket", JSON.stringify(basketProducts));
 }
