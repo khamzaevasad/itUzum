@@ -41,10 +41,14 @@
 
           <div class="navbar-end">
             <div class="hidden lg:flex justify-center items-center gap-4">
-              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
+              <a
+                class="text-sm text-primary font-medium hover:opacity-70"
+                href="#"
                 >Become a seller
               </a>
-              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
+              <a
+                class="text-sm text-primary font-medium hover:opacity-70"
+                href="#"
                 >Open a pickup point
               </a>
               <a class="text-sm font-semibold hover:opacity-70" href="#">FAQ</a>
@@ -105,7 +109,7 @@
             </li>
             <li class="indicator">
               <span
-                class="indicator-item badge badge-info badge-sm"
+                class="indicator-item badge badge-primary badge-sm"
                 id="header-wishlist"
                 >0</span
               >
@@ -113,7 +117,7 @@
             </li>
             <li class="indicator">
               <span
-                class="indicator-item badge badge-info badge-sm"
+                class="indicator-item badge badge-primary badge-sm"
                 id="total-amound"
                 >0</span
               >
@@ -127,21 +131,237 @@
     <!-- main -->
     <main>
       <!-- Basket Container -->
-      <section class="align-elements">
-        <div class="flex w-full flex-col lg:flex-row gap-3">
-          <!-- Basket Products -->
-          <div
-            class="card bg-base-300 rounded-box grid h-32 grow place-items-center"
-          >
-            <!-- Products -->
-            content
+      <section class="align-elements my-10">
+        <div class="flex flex-col md:flex-row gap-3">
+          <div class="w-full md:flex-[2]">
+            <ul class="list bg-base-100 rounded-box shadow-md">
+              <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">
+                Items in Cart: <span>5</span>
+              </li>
+              <li
+                class="flex flex-col sm:flex-col md:flex-col lg:flex-row items-center gap-3 mx-2.5 my-1.5"
+              >
+                <!-- Checbox Lg -->
+                <div class="hidden lg:flex">
+                  <input type="checkbox" class="checkbox checkbox-info" />
+                </div>
+                <!-- Product Image -->
+                <div>
+                  <img
+                    class="rounded-box h-70 w-70"
+                    src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
+                  />
+                </div>
+                <!-- Product Info -->
+                <div class="flex flex-col gap-2">
+                  <div>
+                    <div>Nike</div>
+                    <div class="text-xs uppercase font-semibold opacity-60">
+                      Ships in 2 weeks
+                      <span><i class="fa-solid fa-rocket"></i></span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col">
+                    <p class="list-col-wrap text-xs">
+                      "Remaining Reason" became an instant hit, praised for its
+                      haunting sound and emotional depth.
+                    </p>
+                    <div class="flex-col flex my-2">
+                      <div>
+                        <span
+                          class="bg-red-500 p-0.5 rounded font-bold text-white text-xs"
+                          >55% discount</span
+                        >
+                        <span class="line-through opacity-50">$3200</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 mx-auto lg:mx-0">
+                    <input
+                      type="checkbox"
+                      class="flex lg:hidden checkbox checkbox-info"
+                    />
+                    <!-- Product Join container -->
+                    <div class="join">
+                      <button
+                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                      >
+                        -
+                      </button>
+                      <input
+                        class="input input-bordered join-item w-16 text-center input-xs lg:input-md"
+                        value="1"
+                        readonly
+                      />
+                      <button
+                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <!-- Delete Btn -->
+                    <div>
+                      <!-- Delete Btn -->
+                      <button class="btn btn-ghost btn-primary">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+              <li
+                class="flex flex-col sm:flex-col md:flex-col lg:flex-row items-center gap-3 mx-2.5 my-1.5"
+              >
+                <!-- Checbox Lg -->
+                <div class="hidden lg:flex">
+                  <input type="checkbox" class="checkbox checkbox-info" />
+                </div>
+                <!-- Product Image -->
+                <div>
+                  <img
+                    class="rounded-box h-70 w-70"
+                    src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
+                  />
+                </div>
+                <!-- Product Info -->
+                <div class="flex flex-col gap-2">
+                  <div>
+                    <div>Nike</div>
+                    <div class="text-xs uppercase font-semibold opacity-60">
+                      Ships in 2 weeks
+                      <span><i class="fa-solid fa-rocket"></i></span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col">
+                    <p class="list-col-wrap text-xs">
+                      "Remaining Reason" became an instant hit, praised for its
+                      haunting sound and emotional depth.
+                    </p>
+                    <div class="flex-col flex my-2">
+                      <div>
+                        <span
+                          class="bg-red-500 p-0.5 rounded font-bold text-white text-xs"
+                          >55% discount</span
+                        >
+                        <span class="line-through opacity-50">$3200</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 mx-auto lg:mx-0">
+                    <input
+                      type="checkbox"
+                      class="flex lg:hidden checkbox checkbox-info"
+                    />
+                    <!-- Product Join container -->
+                    <div class="join">
+                      <button
+                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                      >
+                        -
+                      </button>
+                      <input
+                        class="input input-bordered join-item w-16 text-center input-xs lg:input-md"
+                        value="1"
+                        readonly
+                      />
+                      <button
+                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <!-- Delete Btn -->
+                    <div>
+                      <!-- Delete Btn -->
+                      <button class="btn btn-ghost btn-primary">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div class="h-[1px] bg-gray-200 my-4 w-full"></div>
+            </ul>
           </div>
+          <div class="w-full md:flex-[1]">
+            <!-- Deliver info card -->
+            <div class="card w-96 bg-base-100 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="flex justify-between">
+                  <span class="text-primary text-xl"
+                    ><i class="fa-solid fa-truck"></i
+                  ></span>
+                  <span class="text-xl font-bold">Free to pickup point</span>
+                  <div class="dropdown dropdown-end">
+                    <div
+                      tabindex="0"
+                      role="button"
+                      class="btn btn-circle btn-ghost btn-xs text-info"
+                    >
+                      <span class="text-xl text-primary">
+                        <i class="fa-solid fa-circle-info"></i>
+                      </span>
+                    </div>
+                    <div
+                      tabindex="0"
+                      class="card card-sm dropdown-content bg-base-100 rounded-box z-1 w-64 shadow-sm"
+                    >
+                      <div tabindex="0" class="card-body">
+                        <h2 class="card-title">On behalf of the FedEx team</h2>
+                        <p>Enjoy free shipping when you spend $1000 or more!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <!-- Basket Price Info -->
-          <div
-            class="card bg-base-300 rounded-box grid h-32 grow place-items-center"
-          >
-            content
+            <!-- Price info card -->
+            <div class="card w-96 bg-base-100 shadow-sm">
+              <div class="card-body">
+                <div>
+                  <h3 class="text-xl font-bold text-primary">Your Order</h3>
+                  <div class="flex justify-between my-5">
+                    <span>Items <span>(4):</span></span>
+                    <span>$3200</span>
+                  </div>
+                  <div class="text-center">
+                    <p
+                      class="w-full badge badge-outline badge-primary rounded-none"
+                    >
+                      Shipped by FedEx
+                    </p>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary my-5">Total</h3>
+                  <!-- Card pay -->
+                  <div class="flex justify-between">
+                    <span class="text-xs"> Card Payment </span>
+                    <span>$260</span>
+                  </div>
+                  <!-- Cash Pay -->
+                  <div class="flex justify-between">
+                    <span class="text-xs">
+                      Cash Payment
+                      <span
+                        class="bg-red-500 p-0.5 font-bold text-white rounded"
+                        >5% discount</span
+                      >
+                    </span>
+                    <span>$260</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary">
+                    Your Savings: <span class="text-xl text-success">$30</span>
+                  </h3>
+                </div>
+
+                <div class="mt-6">
+                  <a href="#" class="btn btn-primary btn-block">
+                    Proceed to checkout
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -234,7 +454,7 @@
             data-tip="wishlist"
           >
             <span
-              class="indicator-item badge badge-info badge-sm"
+              class="indicator-item badge badge-primary badge-sm"
               id="footer-wishList"
               >0</span
             >
@@ -249,7 +469,7 @@
             data-tip="cart"
           >
             <span
-              class="indicator-item badge badge-info badge-sm"
+              class="indicator-item badge badge-primary badge-sm"
               id="footer-amound"
               >0</span
             >
