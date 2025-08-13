@@ -1,6 +1,16 @@
 import { addToBasket } from "./basket.js";
 import { addToWishList } from "./wishList.js";
 import { formatNumber } from "./formatNumber.js";
+import { increment, decrement, deleteProduct } from "./basketPage.js";
+
+// // alert
+// export function showAlert() {
+//   const alert = document.getElementById("myAlert");
+//   alert.classList.remove("hidden");
+//   setTimeout(() => {
+//     alert.classList.add("hidden");
+//   }, 3000);
+// }
 
 // mainUI update
 export const updataUI = (products, template, containerElement) => {
@@ -46,8 +56,8 @@ export const updataUI = (products, template, containerElement) => {
 
     productPrice.textContent = `$${price}`;
     productImg.src = `${thumbnail}`;
-    discountPrice.textContent = `$${Math.floor(
-      price * (1 - discountPercentage / 100).toFixed(2)
+    discountPrice.textContent = `${formatNumber(
+      Math.floor(price * (1 - discountPercentage / 100))
     )}`;
     productDiscount.textContent = `${discountPercentage} % discount`;
     productDescription.textContent = `${description}`;
@@ -169,6 +179,7 @@ export const updateProduct = (product) => {
 // basketUI Update
 export const basketItems = (product, template, containerElements) => {
   const fragment = document.createDocumentFragment();
+  containerElements.innerHTML = "";
 
   product.forEach((item) => {
     const {
@@ -191,6 +202,21 @@ export const basketItems = (product, template, containerElements) => {
     const itemDiscount = clone.querySelector(".item-discount");
     const itemPrice = clone.querySelector(".item-price");
     const itemAmount = clone.querySelector(".item-amount");
+    const discountPrice = clone.querySelector(".discount-price");
+    const incrementBtn = clone.querySelector(".increment-btn");
+    const decrementBtn = clone.querySelector(".decrement-btn");
+    const deleteBtn = clone.querySelector(".delete-btn");
+
+    // btn Event
+    deleteBtn.addEventListener("click", () => {
+      deleteProduct(id);
+    });
+    incrementBtn.addEventListener("click", () => {
+      increment(id);
+    });
+    decrementBtn.addEventListener("click", () => {
+      decrement(id);
+    });
 
     img.src = thumbnail;
     itemTitle.textContent = title;
@@ -199,8 +225,31 @@ export const basketItems = (product, template, containerElements) => {
     itemDiscount.textContent = `${discountPercentage}% discount`;
     itemPrice.textContent = formatNumber(price);
     itemAmount.value = amount;
+    discountPrice.textContent = formatNumber(
+      Math.floor(price * (1 - discountPercentage / 100) * amount)
+    );
 
     fragment.appendChild(clone);
   });
   containerElements.appendChild(fragment);
+};
+
+export const priceInfo = (totalProducts, product) => {
+  const itemTotal = document.querySelector(".item-total");
+  const totalPrice = document.querySelector(".total-price");
+  const lastPrice = document.querySelector(".last-price");
+  const savingInfo = document.querySelector(".saving-info");
+
+  itemTotal.textContent = totalProducts.totalAmount;
+  totalPrice.textContent = totalProducts.totalPrice;
+  lastPrice.textContent = totalProducts.totalPrice;
+  const totalSavings = product.reduce((sum, item) => {
+    return (
+      sum +
+      ((Number(item.price) * Number(item.discountPercentage)) / 100) *
+        Number(item.amount)
+    );
+  }, 0);
+
+  savingInfo.textContent = formatNumber(totalSavings);
 };

@@ -20,12 +20,11 @@ function calculateWishList(wishList) {
 }
 
 export const addToWishList = (product) => {
-  const item = wishList.find((p) => p.id == product.id);
-  if (item) {
-    item.amound += 1;
+  const index = wishList.findIndex((p) => p.id == product.id);
+  if (index !== -1) {
+    wishList.splice(index, 1);
   } else {
     wishList.push({ ...product, amound: 1 });
   }
   console.log(calculateWishList(wishList));
-  localStorage.setItem("wishList", JSON.stringify(wishList));
 };

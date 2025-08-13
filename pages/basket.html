@@ -41,14 +41,10 @@
 
           <div class="navbar-end">
             <div class="hidden lg:flex justify-center items-center gap-4">
-              <a
-                class="text-sm text-primary font-medium hover:opacity-70"
-                href="#"
+              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
                 >Become a seller
               </a>
-              <a
-                class="text-sm text-primary font-medium hover:opacity-70"
-                href="#"
+              <a class="text-sm text-info font-medium hover:opacity-70" href="#"
                 >Open a pickup point
               </a>
               <a class="text-sm font-semibold hover:opacity-70" href="#">FAQ</a>
@@ -109,7 +105,7 @@
             </li>
             <li class="indicator">
               <span
-                class="indicator-item badge badge-primary badge-sm"
+                class="indicator-item badge badge-info badge-sm"
                 id="header-wishlist"
                 >0</span
               >
@@ -117,7 +113,7 @@
             </li>
             <li class="indicator">
               <span
-                class="indicator-item badge badge-primary badge-sm"
+                class="indicator-item badge badge-info badge-sm"
                 id="total-amound"
                 >0</span
               >
@@ -132,12 +128,12 @@
     <main>
       <!-- Basket Container -->
       <section class="align-elements my-10">
-        <div class="flex flex-col md:flex-row gap-3">
+        <div class="flex flex-col md:flex-row gap-3 basket-main-container">
           <!-- items-left -->
           <div class="w-full md:flex-[2]">
             <ul id="basket-list" class="list bg-base-100 rounded-box shadow-md">
               <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">
-                Items in Cart: <span>5</span>
+                Items in Cart: <span class="total-amount">5</span>
               </li>
             </ul>
             <!-- Template -->
@@ -175,11 +171,14 @@
                     <div class="flex-col flex my-2">
                       <div>
                         <span
-                          class="item-discount bg-red-500 p-0.5 rounded font-bold text-white text-xs"
+                          class="item-discount bg-yellow-400 p-0.5 rounded font-bold text-white text-xs"
                           >55% discount</span
                         >
-                        <span class="item-price line-through opacity-50"
+                        <span
+                          class="item-price line-through opacity-50 text-red-500"
                           >$3200</span
+                        ><span class="discount-price ml-2 font-bold text-info"
+                          >200</span
                         >
                       </div>
                     </div>
@@ -192,7 +191,7 @@
                     <!-- Product Join container -->
                     <div class="join">
                       <button
-                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                        class="decrement-btn btn btn-info join-item btn-xs lg:btn-md"
                       >
                         -
                       </button>
@@ -202,7 +201,7 @@
                         readonly
                       />
                       <button
-                        class="btn btn-primary join-item btn-xs lg:btn-md"
+                        class="increment-btn btn btn-info join-item btn-xs lg:btn-md"
                       >
                         +
                       </button>
@@ -210,7 +209,7 @@
                     <!-- Delete Btn -->
                     <div>
                       <!-- Delete Btn -->
-                      <button class="btn btn-ghost btn-primary">
+                      <button class="btn btn-ghost btn-info delete-btn">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </div>
@@ -226,7 +225,7 @@
             <div class="card w-96 bg-base-100 shadow-sm mb-4">
               <div class="card-body">
                 <div class="flex justify-between">
-                  <span class="text-primary text-xl"
+                  <span class="text-info text-xl"
                     ><i class="fa-solid fa-truck"></i
                   ></span>
                   <span class="text-xl font-bold">Free to pickup point</span>
@@ -236,7 +235,7 @@
                       role="button"
                       class="btn btn-circle btn-ghost btn-xs text-info"
                     >
-                      <span class="text-xl text-primary">
+                      <span class="text-xl text-info">
                         <i class="fa-solid fa-circle-info"></i>
                       </span>
                     </div>
@@ -255,51 +254,54 @@
             </div>
 
             <!-- Price info card -->
-            <div class="card w-96 bg-base-100 shadow-sm">
+            <div class="card w-96 bg-base-100 shadow-sm price-info-card">
               <div class="card-body">
                 <div>
-                  <h3 class="text-xl font-bold text-primary">Your Order</h3>
+                  <h3 class="text-xl font-bold text-info">Your Order</h3>
                   <div class="flex justify-between my-5">
-                    <span>Items <span>(4):</span></span>
-                    <span>$3200</span>
+                    <span>Items <span class="item-total">(4):</span></span>
+                    <span class="total-price">$3200</span>
                   </div>
                   <div class="text-center">
                     <p
-                      class="w-full badge badge-outline badge-primary rounded-none"
+                      class="w-full badge badge-outline badge-info rounded-none"
                     >
                       Shipped by FedEx
                     </p>
                   </div>
-                  <h3 class="text-xl font-bold text-primary my-5">Total</h3>
+                  <h3 class="text-xl font-bold text-info my-5">Total</h3>
                   <!-- Card pay -->
                   <div class="flex justify-between">
-                    <span class="text-xs"> Card Payment </span>
-                    <span>$260</span>
+                    <span class="text-xs font-bold"> Card Payment </span>
+                    <span class="font-bold last-price">$260</span>
                   </div>
                   <!-- Cash Pay -->
-                  <div class="flex justify-between">
-                    <span class="text-xs">
-                      Cash Payment
-                      <span
-                        class="bg-red-500 p-0.5 font-bold text-white rounded"
-                        >5% discount</span
-                      >
-                    </span>
-                    <span>$260</span>
-                  </div>
-                  <h3 class="text-xl font-bold text-primary">
-                    Your Savings: <span class="text-xl text-success">$30</span>
+
+                  <h3 class="text-xl font-bold text-info">
+                    Your Savings:
+                    <span class="text-xl text-success saving-info">$30</span>
                   </h3>
                 </div>
 
                 <div class="mt-6">
-                  <a href="#" class="btn btn-primary btn-block">
+                  <a href="#" class="btn btn-info btn-block">
                     Proceed to checkout
                   </a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <!-- Empty Cart -->
+        <div
+          class="empty-cart hidden flex flex-col items-center justify-center"
+        >
+          <div class="my-5">
+            <h2 class="font-bold text-4xl">Your cart is empty</h2>
+          </div>
+          <a href="../index.html" class="btn btn-info btn-outline"
+            >Add products <span><i class="fa-solid fa-cart-plus"></i></span
+          ></a>
         </div>
       </section>
     </main>
@@ -391,7 +393,7 @@
             data-tip="wishlist"
           >
             <span
-              class="indicator-item badge badge-primary badge-sm"
+              class="indicator-item badge badge-info badge-sm"
               id="footer-wishList"
               >0</span
             >
@@ -406,7 +408,7 @@
             data-tip="cart"
           >
             <span
-              class="indicator-item badge badge-primary badge-sm"
+              class="indicator-item badge badge-info badge-sm"
               id="footer-amound"
               >0</span
             >
