@@ -1,6 +1,8 @@
 import { addToBasket } from "./basket.js";
 import { addToWishList } from "./wishList.js";
+import { formatNumber } from "./formatNumber.js";
 
+// mainUI update
 export const updataUI = (products, template, containerElement) => {
   const fragment = document.createDocumentFragment();
 
@@ -60,7 +62,6 @@ export const updataUI = (products, template, containerElement) => {
 };
 
 // product category
-
 export const productFilter = (product) => {
   const categories = [...new Set(product.map((item) => item.category))];
   const brands = [...new Set(product.map((item) => item.brand))];
@@ -163,4 +164,43 @@ export const updateProduct = (product) => {
   minimumOrder.textContent = product.minimumOrderQuantity;
   availability.textContent = product.availabilityStatus;
   warranty.textContent = product.warrantyInformation;
+};
+
+// basketUI Update
+export const basketItems = (product, template, containerElements) => {
+  const fragment = document.createDocumentFragment();
+
+  product.forEach((item) => {
+    const {
+      amount,
+      thumbnail,
+      title,
+      shippingInformation,
+      price,
+      discountPercentage,
+      id,
+      description,
+    } = item;
+
+    const clone = template.content.cloneNode(true);
+
+    const img = clone.querySelector(".item-img");
+    const itemTitle = clone.querySelector(".item-title");
+    const shippingInfo = clone.querySelector(".shipping-info");
+    const itemDescription = clone.querySelector(".item-description");
+    const itemDiscount = clone.querySelector(".item-discount");
+    const itemPrice = clone.querySelector(".item-price");
+    const itemAmount = clone.querySelector(".item-amount");
+
+    img.src = thumbnail;
+    itemTitle.textContent = title;
+    shippingInfo.textContent = shippingInformation;
+    itemDescription.textContent = description;
+    itemDiscount.textContent = `${discountPercentage}% discount`;
+    itemPrice.textContent = formatNumber(price);
+    itemAmount.value = amount;
+
+    fragment.appendChild(clone);
+  });
+  containerElements.appendChild(fragment);
 };
