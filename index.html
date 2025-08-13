@@ -14,6 +14,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script>
+      if (!localStorage.getItem("user")) {
+        location.replace("./pages/login.html");
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->

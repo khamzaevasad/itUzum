@@ -13,14 +13,18 @@ if (basketList) {
   priceInfo(totalProducts, basketProducts);
 }
 
-export const increment = (id) => {
-  const item = basketProducts.find((item) => item.id == id);
-  item.amount += 1;
+const updataUIandLocal = () => {
   localStorage.setItem("basket", JSON.stringify(basketProducts));
   basketItems(basketProducts, basketTemplate, basketList);
   const totalProducts = calculateTotal(basketProducts);
   calculateTotal(basketProducts);
   priceInfo(totalProducts, basketProducts);
+};
+
+export const increment = (id) => {
+  const item = basketProducts.find((item) => item.id == id);
+  item.amount += 1;
+  updataUIandLocal();
 };
 
 export const decrement = (id) => {
@@ -35,11 +39,7 @@ export const decrement = (id) => {
     item.amount -= 1;
   }
 
-  localStorage.setItem("basket", JSON.stringify(basketProducts));
-  basketItems(basketProducts, basketTemplate, basketList);
-  calculateTotal(basketProducts);
-  const totalProducts = calculateTotal(basketProducts);
-  priceInfo(totalProducts, basketProducts);
+  updataUIandLocal();
 };
 
 export const deleteProduct = (id) => {
@@ -49,11 +49,7 @@ export const deleteProduct = (id) => {
     basketProducts = basketProducts.filter((item) => item.id != id);
   }
 
-  localStorage.setItem("basket", JSON.stringify(basketProducts));
-  basketItems(basketProducts, basketTemplate, basketList);
-  calculateTotal(basketProducts);
-  const totalProducts = calculateTotal(basketProducts);
-  priceInfo(totalProducts, basketProducts);
+  updataUIandLocal();
 };
 
 const mainContainer = document.querySelector(".basket-main-container");

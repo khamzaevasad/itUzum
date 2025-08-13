@@ -4,6 +4,8 @@ import "./search.js";
 import { getData } from "./request.js";
 import { updataUI, productFilter } from "./updataUi.js";
 
+let user = false;
+
 let limit = 12;
 let url = "https://dummyjson.com/product";
 

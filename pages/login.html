@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+        <div
+          class="auth-left flex items-center justify-center py-8 lg:py-0 order-1 lg:order-none"
+        >
+          <div>
+            <h1
+              class="text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
+            >
+              Welcome to itUzum!
+            </h1>
+            <p class="text-xl max-w-md text-center">
+              Explore a world of fresh products and daily necessities, all
+              curated just for you. Sign in to unlock your complete lifestyle
+              journey with itUzum
+            </p>
+          </div>
+        </div>
+        <div
+          class="auth-right flex items-center justify-center py-8 lg:py-0 order-2 lg:order-none"
+        >
+          <form class="w-full max-w-[350px]">
+            <h2 class="text-4xl text-center font-medium">Login</h2>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Email:</legend>
+              <input type="text" class="input w-full" placeholder="Email" />
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Password:</legend>
+              <input type="text" class="input w-full" placeholder="Password " />
+            </fieldset>
+            <div class="flex w-full flex-col my-5">
+              <button class="btn btn-secondary w-full">Submit</button>
+
+              <div class="divider">OR</div>
+
+              <button class="btn btn-secondary w-full">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
