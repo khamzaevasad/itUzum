@@ -306,6 +306,84 @@
           ></a>
         </div>
       </section>
+
+      <!-- Recommended Products -->
+      <section class="align-elements">
+        <h2 class="text-xl font-bold my-6">Recommended Products</h2>
+        <!-- Card Container -->
+        <div
+          id="card-con"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 md:gap-4"
+        ></div>
+        <template id="basketRecomTemplate">
+          <!-- Card -1 -->
+          <a
+            href="#"
+            class="card bg-base-100 w-full shadow-sm group product-card"
+          >
+            <!-- Like icon -->
+            <div
+              class="wishListBtn absolute top-2 right-2 z-10 rounded-full w-5 h-5 flex items-center justify-center p-3"
+            >
+              <i
+                class="fa-regular fa-heart cursor-pointer hover:text-red-500"
+              ></i>
+            </div>
+
+            <figure>
+              <img
+                id="product-img"
+                src="./assets/image.png"
+                alt="Shoes"
+                class="group-hover:scale-102 transition duration-400 rounded"
+              />
+            </figure>
+
+            <div class="card-body p-1">
+              <div>
+                <span
+                  id="product-price"
+                  class="text-sm line-through text-red-500"
+                  >100</span
+                >
+                <span
+                  id="discount-price"
+                  class="font-bold text-sm text-info"
+                ></span>
+              </div>
+              <p class="font-normal text-xs text-base-400">
+                <span
+                  class="bg-yellow-400 rounded px-0.5 py-0.5 inline-block"
+                  id="product-discount"
+                  >10</span
+                >
+              </p>
+              <p id="product-description" class="line-clamp-2 text-xs">
+                Erkaklar kedalari, 1 o'lcham kattasini oling, Xitoy erkak
+                krasofkalari
+              </p>
+              <div class="flex items-center gap-0.5">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span id="product-rating" class="text-xs text-gray-400">
+                  4.7
+                </span>
+                <span
+                  id="product-reviews"
+                  class="text-xs text-gray-400 line-clamp-1"
+                  >(37 sharhlar)</span
+                >
+              </div>
+              <div class="card-actions justify-center">
+                <button
+                  class="btn btn-sm btn-info text-base-100 w-full basket-btn"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </a>
+        </template>
+      </section>
     </main>
 
     <!-- Footer -->

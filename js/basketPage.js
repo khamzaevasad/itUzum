@@ -1,7 +1,10 @@
 import "./mode.js";
 import "./wishList.js";
 import { calculateTotal, basketProducts as data } from "./basket.js";
-import { basketItems, priceInfo } from "./updataUi.js";
+import { basketItems, priceInfo, updataUI } from "./updataUi.js";
+import { getData } from "./request.js";
+
+let url = "https://dummyjson.com/product?limit=10";
 
 let basketProducts = data;
 let totalProducts = calculateTotal(basketProducts);
@@ -64,3 +67,14 @@ if (mainContainer && emptyCart) {
     emptyCart.classList.add("hidden");
   }
 }
+
+const basketRecomTemplate = document.getElementById("basketRecomTemplate");
+const containerElement = document.getElementById("card-con");
+
+getData(url)
+  .then((data) => {
+    updataUI(data.products, basketRecomTemplate, containerElement);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
