@@ -2,15 +2,15 @@ import "./basket.js";
 import "./mode.js";
 import "./search.js";
 import "./location.js";
+import "./dropdown.js";
+
 import { getData } from "./request.js";
 import { updataUI, productFilter } from "./updataUi.js";
-
-let user = false;
 
 let limit = 12;
 let url = "https://dummyjson.com/product";
 
-const mainTemplate = document.querySelector("template"); //index.html
+const mainTemplate = document.getElementById("index-template"); //index.html
 const cardCon = document.getElementById("card-con"); //index.html
 const showMoreBtn = document.getElementById("show-more-btn");
 const showLessBtn = document.getElementById("show-less-btn");

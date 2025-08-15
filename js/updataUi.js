@@ -234,6 +234,7 @@ export const basketItems = (product, template, containerElements) => {
   containerElements.appendChild(fragment);
 };
 
+// basket Price info
 export const priceInfo = (totalProducts, product) => {
   const itemTotal = document.querySelector(".item-total");
   const totalPrice = document.querySelector(".total-price");
@@ -252,4 +253,27 @@ export const priceInfo = (totalProducts, product) => {
   }, 0);
 
   savingInfo.textContent = formatNumber(totalSavings);
+};
+
+// basket dropdown Update
+
+export const basketDropItems = (product, template, containerElements) => {
+  const fragment = document.createDocumentFragment();
+  containerElements.innerHTML = "";
+
+  product.forEach((item) => {
+    const { amount, thumbnail, title } = item;
+    const clone = template.content.cloneNode(true);
+
+    const dropImg = clone.querySelector(".dropImg");
+    const _title = clone.querySelector(".dropTitle");
+    const _amount = clone.querySelector(".dropAmount");
+
+    dropImg.src = thumbnail;
+    _title.textContent = title;
+    _amount.textContent = amount;
+
+    fragment.appendChild(clone);
+  });
+  containerElements.appendChild(fragment);
 };

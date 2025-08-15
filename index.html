@@ -161,6 +161,32 @@
                 ><i class="fa-solid fa-cart-shopping"></i> Cart</a
               >
             </li>
+            <!-- dropdown menu -->
+            <li class="dropdown dropdown-hover">
+              <div tabindex="0" role="button" class="">
+                <span><i class="fa-solid fa-basket-shopping"></i></span>Products
+              </div>
+              <ul
+                tabindex="0"
+                class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm basket-Temp-Con"
+              ></ul>
+
+              <template id="basket-Product-Temp">
+                <li class="flex gap-3">
+                  <div>
+                    <img
+                      class="w-10 dropImg"
+                      src="./assets/image.png"
+                      alt="img"
+                    />
+                    <span class="dropTitle text-xs font-medium"
+                      >Eyeshadow Palette with Mirror
+                    </span>
+                    <span class="dropAmount font-medium text-xs">4</span>
+                  </div>
+                </li>
+              </template>
+            </li>
           </ul>
         </div>
       </nav>
@@ -410,7 +436,7 @@
             id="card-con"
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 md:gap-4"
           ></div>
-          <template>
+          <template id="index-template">
             <!-- Card -1 -->
             <a
               href="#"

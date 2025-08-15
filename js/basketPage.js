@@ -7,7 +7,7 @@ import { getData } from "./request.js";
 
 let url = "https://dummyjson.com/product?limit=10";
 
-let basketProducts = data;
+export let basketProducts = data;
 let totalProducts = calculateTotal(basketProducts);
 const basketList = document.getElementById("basket-list");
 const basketTemplate = document.querySelector("template");
@@ -17,7 +17,7 @@ if (basketList) {
   priceInfo(totalProducts, basketProducts);
 }
 
-const updataUIandLocal = () => {
+export const updataUIandLocal = () => {
   localStorage.setItem("basket", JSON.stringify(basketProducts));
   basketItems(basketProducts, basketTemplate, basketList);
   const totalProducts = calculateTotal(basketProducts);
