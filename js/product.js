@@ -1,7 +1,8 @@
-import { getData } from "./request.js";
-import { updateProduct, updataUI } from "./updataUi.js";
 import "./mode.js";
 import "./basket.js";
+import "./location.js";
+import { getData } from "./request.js";
+import { updateProduct, updataUI } from "./updataUi.js";
 
 const recommendedTemplate = document.querySelector("template");
 const containerElement = document.getElementById("card-con");

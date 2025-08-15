@@ -1,5 +1,6 @@
 import "./mode.js";
 import "./wishList.js";
+import "./location.js";
 import { calculateTotal, basketProducts as data } from "./basket.js";
 import { basketItems, priceInfo, updataUI } from "./updataUi.js";
 import { getData } from "./request.js";
@@ -68,13 +69,13 @@ if (mainContainer && emptyCart) {
   }
 }
 
-const basketRecomTemplate = document.getElementById("basketRecomTemplate");
-const containerElement = document.getElementById("card-con");
+// const basketRecomTemplate = document.getElementById("basketRecomTemplate");
+// const containerElement = document.getElementById("card-con");
 
-getData(url)
-  .then((data) => {
-    updataUI(data.products, basketRecomTemplate, containerElement);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// getData(url)
+//   .then((data) => {
+//     updataUI(data.products, basketRecomTemplate, containerElement);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
