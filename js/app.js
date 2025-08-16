@@ -3,6 +3,7 @@ import "./mode.js";
 import "./search.js";
 import "./location.js";
 import "./dropdown.js";
+import "./filter.js";
 
 import { getData } from "./request.js";
 import { updataUI, productFilter } from "./updataUi.js";
@@ -15,6 +16,8 @@ const cardCon = document.getElementById("card-con"); //index.html
 const showMoreBtn = document.getElementById("show-more-btn");
 const showLessBtn = document.getElementById("show-less-btn");
 
+export let products;
+
 getData(url + `?limit=${limit}`)
   .then((data) => {
     updataUI(data.products, mainTemplate, cardCon);
@@ -25,6 +28,7 @@ getData(url + `?limit=${limit}`)
 
 getData("https://dummyjson.com/product?limit=194")
   .then((data) => {
+    products = data.products;
     productFilter(data.products);
   })
   .catch((error) => {

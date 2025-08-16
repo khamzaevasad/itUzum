@@ -300,7 +300,8 @@
                     </div>
 
                     <!-- Responsiv  -->
-                    <div
+                    <form
+                      id="filter-form"
                       class="collapse-content text-sm grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4"
                     >
                       <!-- Category -->
@@ -312,10 +313,6 @@
                           <legend class="fieldset-legend text-xl text-info">
                             Category
                           </legend>
-                          <label class="label font-bold text-base-content">
-                            <input type="checkbox" class="checkbox" />
-                            <span class="product-filter-category"></span>
-                          </label>
                         </fieldset>
                       </div>
 
@@ -328,10 +325,6 @@
                           <legend class="fieldset-legend text-xl text-info">
                             Brand
                           </legend>
-                          <label class="label font-bold text-base-content">
-                            <input type="checkbox" class="checkbox" />
-                            <span class="brand-filter-category"></span>
-                          </label>
                         </fieldset>
                       </div>
 
@@ -387,14 +380,15 @@
                           </p>
                         </fieldset>
                       </div>
-                    </div>
+
+                      <button class="btn btn-info btn-outline">Search</button>
+                    </form>
                   </div>
                 </div>
 
                 <!-- Modal action -->
                 <div class="modal-action">
                   <form method="dialog">
-                    <button class="btn btn-info btn-outline">Search</button>
                     <button class="btn">Close</button>
                   </form>
                 </div>

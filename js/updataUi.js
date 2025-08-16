@@ -13,7 +13,7 @@ import { increment, decrement, deleteProduct } from "./basketPage.js";
 // }
 
 // mainUI update
-export const updataUI = (products, template, containerElement) => {
+export const updataUI = (products = [], template, containerElement) => {
   const fragment = document.createDocumentFragment();
 
   containerElement.innerHTML = "";
@@ -28,12 +28,16 @@ export const updataUI = (products, template, containerElement) => {
       thumbnail,
       id,
       title,
+      category,
+      brand,
     } = item;
 
     const clone = template.content.cloneNode(true);
 
     const card = clone.querySelector(".product-card");
     card.dataset.title = title;
+    card.dataset.category = category;
+    card.dataset.brand = brand;
     const productPrice = clone.querySelector("#product-price");
     const productImg = clone.querySelector("#product-img");
     const discountPrice = clone.querySelector("#discount-price");
@@ -104,11 +108,12 @@ export const productFilter = (product) => {
 
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
+      checkbox.name = `category`;
+      checkbox.value = category;
       checkbox.classList.add("checkbox");
       const span = document.createElement("span");
       span.classList.add("product-filter-category");
       span.textContent = category;
-
       label.appendChild(checkbox);
       label.appendChild(span);
       categoryContainer.appendChild(label);
@@ -126,6 +131,8 @@ export const productFilter = (product) => {
 
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
+      checkbox.name = `brand`;
+      checkbox.value = brand;
       checkbox.classList.add("checkbox");
       const span = document.createElement("span");
       span.classList.add("brand-filter-category");
