@@ -47,6 +47,9 @@ export const updataUI = (products = [], template, containerElement) => {
     const productReviews = clone.querySelector("#product-reviews");
     const basketBtn = clone.querySelector(".basket-btn");
     const wishListBtn = clone.querySelector(".wishListBtn");
+    const joinBox = clone.querySelector(".joinBox");
+    const decrementBtn = clone.querySelector(".decrement-btn");
+    const incrementBtn = clone.querySelector(".increment-btn");
 
     const wished =
       localStorage.getItem("wishList") &&
@@ -70,7 +73,18 @@ export const updataUI = (products = [], template, containerElement) => {
     basketBtn.addEventListener("click", (e) => {
       e.preventDefault();
       addToBasket(item);
+      joinBox.classList.remove("hidden");
+      basketBtn.classList.add("hidden");
     });
+
+    // incrementBtn.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   increment(id);
+    // });
+    // decrementBtn.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   decrement(id);
+    // });
 
     productPrice.textContent = `$${price}`;
     productImg.src = `${thumbnail}`;
@@ -318,78 +332,4 @@ export const basketDropItems = (product, template, containerElements) => {
     fragment.appendChild(clone);
   });
   containerElements.appendChild(fragment);
-};
-
-// wishList update ui
-
-export const wishListUi = (products, template, containerElement) => {
-  const fragment = document.createDocumentFragment();
-
-  containerElement.innerHTML = "";
-
-  products.forEach((item) => {
-    const {
-      description,
-      price,
-      rating,
-      reviews,
-      discountPercentage,
-      thumbnail,
-      id,
-      title,
-    } = item;
-
-    const clone = template.content.cloneNode(true);
-
-    const card = clone.querySelector(".product-card");
-    card.dataset.title = title;
-    const productPrice = clone.querySelector("#product-price");
-    const productImg = clone.querySelector("#product-img");
-    const discountPrice = clone.querySelector("#discount-price");
-    const productDiscount = clone.querySelector("#product-discount");
-    const productDescription = clone.querySelector("#product-description");
-    const productRating = clone.querySelector("#product-rating");
-    const productReviews = clone.querySelector("#product-reviews");
-    const basketBtn = clone.querySelector(".basket-btn");
-    const wishListBtn = clone.querySelector(".wishListBtn");
-
-    const wished =
-      localStorage.getItem("wishList") &&
-      JSON.parse(localStorage.getItem("wishList")).findIndex(
-        (item) => item.id == id
-      );
-
-    if (wished != -1) {
-      wishListBtn.innerHTML = `<i class="text-red-500 fa-solid fa-heart"></i>`;
-    }
-
-    wishListBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (addToWishList(item)) {
-        wishListBtn.innerHTML = `<i class="fa-regular  fa-heart"></i>`;
-      } else {
-        wishListBtn.innerHTML = `<i class="text-red-500 fa-solid fa-heart"></i>`;
-      }
-    });
-
-    basketBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      addToBasket(item);
-    });
-
-    productPrice.textContent = `$${price}`;
-    productImg.src = `${thumbnail}`;
-    discountPrice.textContent = `${formatNumber(
-      Math.floor(price * (1 - discountPercentage / 100))
-    )}`;
-    productDiscount.textContent = `${discountPercentage} % discount`;
-    productDescription.textContent = `${description}`;
-    productRating.textContent = `${rating}`;
-    productReviews.textContent = `(${reviews[0].comment})`;
-
-    card.href = `/pages/product.html?id=${id}`;
-
-    fragment.appendChild(clone);
-  });
-  containerElement.appendChild(fragment);
 };

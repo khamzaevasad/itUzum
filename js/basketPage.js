@@ -17,7 +17,7 @@ if (basketList) {
   priceInfo(totalProducts, basketProducts);
 }
 
-const updataUIandLocal = () => {
+export const updataUIandLocal = () => {
   localStorage.setItem("basket", JSON.stringify(basketProducts));
   basketItems(basketProducts, basketTemplate, basketList);
   const totalProducts = calculateTotal(basketProducts);
